@@ -1,0 +1,28 @@
+{% extends 'app2/base.html' %}
+{% block body %}
+
+    {%  if products %}
+
+    <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>title</th>
+        <th>slug</th>
+        <th>price</th>
+      </tr>
+    </thead>
+    <tbody>
+    {% for i in products %}
+      <tr>
+          <td>{{ i.title }}</td>
+          <td>{{ i.slug }}</td>
+          <td>{{ i.price }}</td>
+          <td><a href="/seller/productmani/{{i.id}}/">edit</a></td>
+
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+    {% endif %}
+
+{% endblock %}

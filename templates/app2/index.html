@@ -1,0 +1,37 @@
+{% extends 'app2/base.html' %}
+
+{% block body %}
+<br><br><br><br>
+    {% if user.is_authenticated %}
+    <div class="container">
+        <table class="table table-bordered">
+    <tbody>
+
+      <tr>
+          <td><a href="/seller/register/" class="btn btn-primary" role="button">register product</a></td>
+      </tr>
+    <tr>
+          <td><a href="/seller/productslist" class="btn btn-primary" role="button">products list</a></td>
+      </tr>
+    <tr>
+          <td> <a href="" class="btn btn-primary" role="button">orders</a></td>
+      </tr>
+    <tr>
+          <td> <a href="" class="btn btn-primary" role="button">delivery</a></td>
+      </tr>
+    <tr>
+          <td>    <a href="" class="btn btn-primary" role="button">payments</a> </td>
+      </tr>
+    <tr>
+          <td> <a href=""class="btn btn-primary" role="button">seller</a></td>
+      </tr>
+
+    </tbody>
+        </table>
+     </div>
+    {% else %}
+    <div class="alert alert-warning">
+  <center><strong>Sorry!</strong> You need to login or register.</center>
+    </div>
+    {% endif %}
+{% endblock %}

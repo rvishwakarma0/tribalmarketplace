@@ -1,0 +1,46 @@
+{% extends 'app2/base.html' %}
+
+{% block body %}
+<br><br><br><br>
+    <div class="container">
+     <table class="table table-bordered">
+    <thead>
+      <tr>
+          <th>specification</th>
+        <th>values</th>
+        <th>new values</th>
+      </tr>
+    </thead>
+    <tbody>
+    <form method="post">
+        {%  csrf_token %}
+      <tr>
+          <td>title</td>
+          <td>{{ product.title }}</td>
+          <td><input type="text" name="ntitle"></td>
+      </tr>
+        <tr>
+          <td>slug</td>
+          <td>{{ product.slug }}</td>
+          <td><input type="text" name="nslug"></td>
+        </tr>
+        <tr>
+            <td>description</td>
+          <td>{{ product.description }}</td>
+          <td><input type="text" name="ndescription"></td>
+        </tr>
+        <tr>
+            <td>price</td>
+          <td>{{ product.price }}</td>
+          <td><input type="text" name="nprice"></td>
+      </tr>
+        </tbody>
+
+
+  </table>
+    <input type="submit" value="submit" btn-primary>
+    </form>
+
+    </div>
+
+{% endblock %}
